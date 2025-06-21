@@ -53,7 +53,7 @@ GROQ_API_KEY=your_groq_key
 
 1. Add the CSV file to the root of project named `applications.csv`
 OR 
-Create a dummy CSV file:
+Create a dummy CSV file using `faker` library:
    ```
    python import_fake_data.py
    ```
