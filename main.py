@@ -13,7 +13,6 @@ load_dotenv()
 # Setup environment variables
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
 groq_api_key = os.getenv("GROQ_API_KEY")
-sheet_url = os.getenv("SHEET_URL") or "https://docs.google.com/spreadsheets/d/1-NcmknFNSDg2S7o6Pn4-oMw3EWL6gZGbShcb1QDNEeM/export?format=csv"
 
 # Load embeddings and Pinecone
 hf_embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -35,7 +34,7 @@ if not pc.has_index(index_name):
 pinecone_index = pc.Index(index_name)
 
 try:
-    df = pd.read_csv(sheet_url)
+    df = pd.read_csv("applications.csv")
 except Exception as e:
     print(f"⚠️ Failed to load from URL: {e}")
 

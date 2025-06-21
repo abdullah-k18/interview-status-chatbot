@@ -7,3 +7,4 @@ langchain-community>=0.0.10
 langchain-pinecone>=0.0.1
 python-dotenv>=1.0.0
 sentence-transformers>=2.2.2
+faker
